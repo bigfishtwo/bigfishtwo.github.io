@@ -1,7 +1,7 @@
 ---
 title: 如何阅读论文
 date: 2023-09-14 +0800
-categories: [学习和思考，学习]
+categories: [学习和思考, 学习]
 tags: []
 ---
 
