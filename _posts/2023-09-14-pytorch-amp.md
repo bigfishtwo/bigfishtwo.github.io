@@ -32,7 +32,7 @@ bfloat16 的指数位和 float32 一样，在训练过程中不容易出现下�
 
 假设我们已经定义好了一个模型， 并写好了其他相关代码（懒得写出来了）。
 
-**1. torch.autocast**
+### 1. torch.autocast
  `torch.autocast` 实例作为上下文管理器，允许脚本区域以混合精度运行。
 在这些区域中，CUDA 操作将以 autocast 选择的 dtype 运行，以提高性能，同时保持准确性。
 
@@ -69,7 +69,7 @@ autocast 到 FP32 的 CUDA 操作：
 `torch.nn.function.binary_cross_entropy()`（以及包装它的`torch.nn.BCELoss`）的向后传递可以产生无法在 FP16 中表示的梯度。在启用 autocast 的区域中，前向输入可能是 FP16，这意味着反向梯度必须可以用 FP16 表示。因此，binary_cross_entropy 和 BCELoss 在启用 autocast 的区域中会引发错误。
 可以使用 `torch.nn.function.binary_cross_entropy_with_logits()` 或 `torch.nn.BCEWithLogitsLoss` 来代替。 
 
-**2. GradScaler**
+### 2. GradScaler
 
 梯度缩放（gradient scaling）有助于防止在使用混合精度进行训练时，出现梯度下溢，也就是在 FP16 下过小的梯度值会变成 0，因此相应参数的更新将丢失。同样的道理，如果网络中有过小的值，比如防止出现除零而加入的 eps 值如果过小（比如 1e-8），也会导致除零错误出现。
 
@@ -82,7 +82,7 @@ autocast 到 FP32 的 CUDA 操作：
 scaler = torch.cuda.amp.GradScaler()
 ```
 
-**1+2: Automatic Mixed Precision**
+### 1+2: Automatic Mixed Precision
 
 ```
 use_amp = True
@@ -104,8 +104,9 @@ for epoch in range(epochs):
         scaler.update()
         opt.zero_grad() # set_to_none=True here can modestly improve performance
 ```
-**检查 loss scale**
+### 检查 loss scale
 训练过程中检查 scale，避免掉到0.
+
 ```
 scaler = torch.cuda.amp.GradScaler()
 current_loss_scale = scaler.get_scale()
@@ -113,9 +114,10 @@ if step % log_iter == 0:
    print('scale:', current_loss_scale)
 ```
 
-**保存和加载**
+### 保存和加载
 如果 checkpoint 是在没有 Amp 的情况下保存的，并且你想要使用 Amp 恢复训练，直接从checkpoint 加载模型和优化器状态，然后用新创建的 GradScaler。
 如果checkpoint是通过使用 Amp 创建的，并且想要在不使用 Amp 的情况下恢复训练，可以直接从checkpoint 加载模型和优化器状态，忽略保存的 scaler 。
+
 ```
 # 保存
 checkpoint = {"model": net.state_dict(),
@@ -135,7 +137,7 @@ scaler.load_state_dict(checkpoint["scaler"])
 
 ## 二、 多个XX
 
-**多个 model，loss， optimizer**
+### 多个 model，loss， optimizer
 如果有多个损失，则必须分别对每个损失调用 scaler.scale。如果网络有多个优化器，可以分别对其中任何一个优化器调用scaler.unscale_，并且必须对每个优化器单独调用 scaler.step。
 但是，scaler.update 只能调用一次.
 ```
@@ -164,7 +166,7 @@ for epoch in epochs:
         scaler.update()
 ```
 
-**多个 GPU**
+### 多个 GPU
 autocast 状态会在每个线程上传播，不管是在单个进程的多线程，还是每个 GPU一个进程。（和原来的没什么区别）
 ```
 model = MyModel()
@@ -215,7 +217,7 @@ MyModel(nn.Module):
 （在图像里ViT上下文没这么长的就不用担心这个问题）
 
 
-### 参考：
+## 参考：
 1. [Pytorch AMP 教程](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html#adding-torch-autocast)
 2. https://pytorch.org/docs/stable/notes/amp_examples.html
 3. https://pytorch.org/docs/stable/amp.html#autocast-op-reference

@@ -220,7 +220,7 @@ class MRIDataset(torch.utils.data.Dataset):
         return (image, label)
 ```
 
-## 一些参考资料：
+## 参考
 1. https://github.com/SimpleITK/TUTORIAL/blob/main/01_spatial_transformations.ipynb
 2. https://www.embodi3d.com/blogs/entry/341-how-to-create-an-nrrd-file-from-a-dicom-medical-imaging-data-set/
 3. https://simpleitk.readthedocs.io/en/master/link_N4BiasFieldCorrection_docs.html

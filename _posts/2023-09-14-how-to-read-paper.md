@@ -6,7 +6,7 @@ tags: []
 ---
 
 
-#### 1. 第一遍全面阅读，抓住大意
+## 1. 第一遍全面阅读，抓住大意
    
    先从摘要开始，然后跳到结论，看看论文的主要内容和发现。
 
@@ -29,7 +29,7 @@ tags: []
   
    在第一遍读完之后，用两到三个句子来概括这篇文章。
 
-#### 2. 第二遍阅读
+## 2. 第二遍阅读
    
    在有些论文粗略看一遍，你就知道它值不值得精读细节了。第二遍重点关注细节，对重要概念进行标记，理解作者的推理论证过程。
 
@@ -37,7 +37,7 @@ tags: []
 
    标记没有读过的相关论文。
 
-#### 3. 第三遍深入思考，评价
+## 3. 第三遍深入思考，评价
    
    将文章与其他工作进行比较：
    - 这个想法之前有人提过吗？如果提过，这个工作和之前的区别在哪？
@@ -45,12 +45,12 @@ tags: []
   
    对文章内容进行综合分析和评价，对第一遍写下的总结进行补充，用三四个要点来支撑大纲。综合评价这篇论文，可以参考论文审稿的写法。
 
-#### 4. 总结和笔记
+## 4. 总结和笔记
    
    边读边做笔记，记下自己的理解和思考，标记作者强调的要点，标记重要数据，最好是让你能够在几个月后重新阅读这篇文章时，能够根据标记迅速回忆起来。
    记下文中出现比较好的词汇和表达，方便日后写论文使用。
 
-#### 5. 论文复现
+## 5. 论文复现
    
    - 准备数据，按照论文中的方法进行数据预处理
    - 编写代码，就算有开源代码也要好好看一遍具体是如何实现的
@@ -58,7 +58,7 @@ tags: []
    - 分析，对比复现结果和原论文结果，提出可能存在的问题和下一步优化方案。
 
 
-参考：
+## 参考：
 1. How to read a research paper. - Harvard University. http://www.eecs.harvard.edu/~michaelm/postscripts/ReadPaper.pdf 
 2. 6 Tips on how to read research papers quickly and efficiently. https://researcher.life/blog/article/read-research-papers-quickly/ 
 3. Reading Research Effectively - University of Southern California. https://libguides.usc.edu/writingguide/readingresearch 
