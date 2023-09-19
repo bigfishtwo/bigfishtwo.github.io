@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://bigfishtwo.github.io/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/categories/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/tags/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/archives/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/about/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/posts/how-to-read-paper/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/posts/test_fish/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/posts/pytorch-amp/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/posts/vit-petl/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/posts/why-vanilla/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/tags/petl/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/tags/pp/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/tags/vit/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/tags/%E8%AE%AD%E7%BB%83%E4%BC%98%E5%8C%96/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/categories/others/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/categories/pp/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/categories/%E5%AD%A6%E4%B9%A0%E5%92%8C%E6%80%9D%E8%80%83/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/categories/%E5%AD%A6%E4%B9%A0/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/categories/%E6%AD%A3%E7%BB%8F%E7%9A%84%E7%9F%A5%E8%AF%86/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/categories/%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bigfishtwo.github.io/categories/%E8%AE%AD%E7%BB%83%E4%BC%98%E5%8C%96/</loc>
+  <lastmod>2023-09-19T10:40:37+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
