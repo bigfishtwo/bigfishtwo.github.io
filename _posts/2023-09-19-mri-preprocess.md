@@ -5,7 +5,7 @@ categories: [医学相关, 医学图像]
 tags: [MRI]
 ---
 
-### 1. MRI 图像是什么
+# 1. MRI 图像是什么
 
 如果抛开MRI成像的物理原理，用计算机的角度去理解MRI图像，那么MRI图像是真实世界内的某样物体通过某种方式被采样到了计算机上。
 
@@ -24,11 +24,11 @@ MRI 图像通常为三维图像，一个二维图像上的像素对应到三维�
 - Spacing：采样的物理间隔
 - 数据类型
 
-### 2. MRI 图像的种类
+# 2. MRI 图像的种类
 
 让我们暂时用“种类”这个略显外行的词来指不同的成像序列得到的 MRI 图像，包括 T1WI， T2WI，DWI（dMRI），fMRI等，根据成像序列不同，它们在不同位置会有不同的明暗变化。例如，脂肪在T1加权图像上显得很亮，而在T2加权图像上显示为暗色。
 
-### 3. MRI 图像的存储格式
+# 3. MRI 图像的存储格式
 
 
 DICOM（digital imaging and communications in medicine） 不只是一种数据储存格式，还是一种通信标准。DICOM提供了一种封装方式，将信息对象定义的一个服务对象对（SOP）实例以数据集的形式封装在一个文件中。DICOM标准文件由DICOM文件头和DICOM数据集两部分组成。
@@ -37,7 +37,7 @@ NIFTI（神经影像信息技术）的扩展名是（.nii），包含了头文�
 
 NRRD（近原始栅格数据），和 NIFTI相似，有包含头文件和使用单独头文件两种形式。与DICOM 相比，它的主要优点是 NRRD 文件是匿名的并且不包含敏感的患者信息。此外，NRRD 文件可以将一次医学扫描的所有数据存储在单个文件中，便于传输。
 
-#### 读写速度对比
+## 读写速度对比
 NIFTI 具有固定的 348 字节二进制标头，这使让NIFTI 读起来非常简单，但是难写，因为它规定了图像数据维度的顺序，前三个维度必须是空间维度，第四个维度是时间维度，维度 5,6 ,7 由用户决定。
 NRRD 是基于文本的，容易编写，因为可以轻松地描述想要的维度顺序。代价是创建阅读器更难，因为需要兼顾图像尺寸。 NRRD 的优雅之处在于标头的灵活性，允许创建一个小的标头来描述不同格式的复杂图像，例如，可以编写一个 NRRD 格式的 nhdr 文件来描述大多数未压缩的 DICOM 图像，从而轻松支持DICOM。
 就速度而言，两者的解析速度都非常快，而且头文件的小成本被大图像淹没了。
@@ -54,7 +54,7 @@ Numpy数组（npy, npz）：不保留元数据，因此只适用于单个实验�
 一些处理 MRI 的 python 库：[nilearn](https://nilearn.github.io/dev/auto_examples/00_tutorials/index.html), [nibabel](https://nipy.org/nibabel/coordinate_systems.html), [dipy](https://dipy.org/documentation/1.7.0/examples_built/#preprocessing), [SimpleITK](https://simpleitk.org/TUTORIAL/)
 
 
-#### DICOM 
+## DICOM 
 read
 
 ```python
@@ -98,7 +98,7 @@ sitk.WriteImage(
 ```
 
 
-#### NIFITI
+## NIFITI
 ```python
 # SimpleITK
 # read 
@@ -123,7 +123,7 @@ temp_file = nib.load('temp_image.nii')
 nib.save(temp_file, 'temp_image.nii')
 ```
 
-#### 与numpy array的转换：
+## 与numpy array的转换：
 
 **SimpleITK** 和 numpy 索引访问顺序相反
 
@@ -159,7 +159,7 @@ epi_img_data = epi_img.get_fdata()
 如果想在训练过程中读取数据更快，可以考虑把数据处理好之后存成hdf5格式，需要到 h5py ，[dataloader读入hdf5格式数据](https://www.jianshu.com/p/ee4b76b32779)。
 
 
-### 4. Resampling
+# 4. Resampling
 
 重采样作为动词的含义是对图像进行取样的行为，而图像本身就是对原始连续信号的取样。
 
@@ -186,14 +186,14 @@ Resample(const Image &image1, std::vector< uint32_t > size, Transform transform,
 - 对重采样网格使用错误的设置。
 - 使用变换的逆。这是一个相对常见的错误，可以通过调用转换 GetInverse 方法轻松解决。
 
-### 5. 预处理流程
+# 5. 预处理流程
 
 参考：
 https://github.com/fitushar/3D-Medical-Imaging-Preprocessing-All-you-need
 https://github.com/ZHAN-GAN/MRI-Preprocess/tree/main
 https://carpentries-incubator.github.io/SDC-BIDS-sMRI/02-Image_Cleanup/index.html
 
-### 6. Dataloader
+# 6. Dataloader
 
 这里放一个伪代码
 ```
@@ -220,7 +220,7 @@ class MRIDataset(torch.utils.data.Dataset):
         return (image, label)
 ```
 
-一些参考资料：
+# 一些参考资料：
 1. https://github.com/SimpleITK/TUTORIAL/blob/main/01_spatial_transformations.ipynb
 2. https://www.embodi3d.com/blogs/entry/341-how-to-create-an-nrrd-file-from-a-dicom-medical-imaging-data-set/
 3. https://simpleitk.readthedocs.io/en/master/link_N4BiasFieldCorrection_docs.html
