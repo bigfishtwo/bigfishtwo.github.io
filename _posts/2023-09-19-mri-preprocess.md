@@ -2,7 +2,7 @@
 title: MRI 预处理
 date: 2023-06-28 +0800
 categories: [医学相关, 医学图像]
-tags: [MRI]
+tags: [MRI, 医学图像]
 ---
 
 ## 1. MRI 图像是什么
@@ -13,7 +13,9 @@ tags: [MRI]
 
 MRI 图像通常为三维图像，一个二维图像上的像素对应到三维图像上被称为 **体素**。体素空间由三个体素轴定义，其中（0，0，0）是阵列中第一个体素的中心，轴上的单位是体素。因此，体素坐标被定义在一个叫做体素空间的参考空间中。
 
-![SimpleITK Images and Resampling](https://upload-images.jianshu.io/upload_images/16576979-1ce8163248f495d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/512)
+
+![SimpleITK Images and Resampling](https://cdn.jsdelivr.net/gh/bigfishtwo/BlogPics@main/imgs/20230920223703.png)
+
 
  RAS 坐标系，通常指三个体素轴的方向分别是从左到右（Right），从后向前（Anterior），从低到高（Superior）。 RAS 也被写作 RAS+，意思是右、前、上为正方向。
 
