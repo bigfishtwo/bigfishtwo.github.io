@@ -6,8 +6,11 @@ tags: [医学图像, CT]
 ---
 
 发表在 CVPR, 2023
+
 论文：https://arxiv.org/pdf/2303.14869.pdf
+
 代码：https://github.com/MrGiovanni/SyntheticTumors
+
 一句话总结：提出了一种肝脏肿瘤的生成方法（非深度学习方法），用于训练分割模型性能接近甚至超过真实数据。
 
 ## 1.  背景
@@ -48,8 +51,7 @@ __肿瘤合成 pipeline__
 
 **位置选择**。第一步是为肿瘤选择合适的位置。这一步至关重要，因为肝脏肿瘤通常不允许任何血管（例如，肝静脉、门静脉和下腔静脉）通过它们。为了避开血管，首先通过体素值阈值进行血管分割。分割后的血管掩码由以下等式给出
 
-
-![20230920224953](httpscdn.jsdelivr.netghbigfishtwoBlogPics@mainimgs20230920224953.png)
+![20230920230718](https://cdn.jsdelivr.net/gh/bigfishtwo/BlogPics@main/imgs/20230920230718.png)
 
 其中， $f'(x,y,z) = f(x,y,z) \otimes g(x,y,z; \sigma_a)$，即原始 CT 通过高斯滤波器平滑。 平滑可以有效地消除 CT 重建引起的噪声。阈值 T被设置为略大于肝脏的平均Hounsfield Unit（HU）的值。
 > Hounsfield Unit（HU），是测定人体某一局部组织或器官密度大小的一种计量单位，通常称亨氏单位，又叫做 CT 值。
@@ -85,7 +87,7 @@ __肿瘤合成 pipeline__
 
 
 ![20230920225546](https://cdn.jsdelivr.net/gh/bigfishtwo/BlogPics@main/imgs/20230920225546.png)
-__μp、σp 是肝实质的平均值和标准差。__
+__μp、σp 是肝实质的平均值和标准差__
 
 ### 2.2 肝脏肿瘤的临床知识
 
