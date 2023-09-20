@@ -3,6 +3,7 @@ title: 论文笔记-Label-Free Liver Tumor Segmentation
 date: 2023-05-14 +0800
 categories: [论文笔记]
 tags: [医学图像, CT]
+math: true
 ---
 
 发表在 CVPR, 2023
