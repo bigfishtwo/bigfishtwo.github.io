@@ -21,8 +21,9 @@ math: true
 一些装饰器用法的展示：
 
 1. 日志打印
+
 ```python
-# ============= 闭包环境 ============ #
+################ 闭包环境 ##############
 def logger(func):
     def wrapper(*args, **kwargs):
         print(f"准备开始执行：{func.__name__} 函数:")
@@ -30,7 +31,7 @@ def logger(func):
         print("执行结束。")
         return result
     return wrapper
-# =================================== #
+#######################################
 
 @logger
 def add(x, y):
@@ -45,6 +46,7 @@ add(200, 50)
 ```
 
 2. 函数计时
+
 ```python
 import time
 def timer(func):
@@ -68,6 +70,7 @@ sleep(10)
 ```
 
 3. 带参数的函数装饰器
+   
 ```python
 def say_hello(country):  # 嵌套了两层
     def decorator(func):
@@ -92,7 +95,6 @@ def jack():
 
 xiaoming()  # 输出：你好！
 jack()  # 输出：hello.
-
 ```
 
 4. 不带参数的类装饰器
@@ -116,10 +118,10 @@ say("hello")
 # 输出：
 # [INFO]: 函数 say() 正在运行... 
 #  say hello!
-
 ```
 
 5. 多个装饰器对同一个函数进行装饰
+   
 ```python
 def set_function1(fun):
     print('---开始进行装饰1---')
