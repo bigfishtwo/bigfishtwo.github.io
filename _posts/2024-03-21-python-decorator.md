@@ -20,7 +20,7 @@ math: true
 
 一些装饰器用法的展示：
 
-1. 日志打印
+### 1. 日志打印
 
 ```python
 ################ 闭包环境 ##############
@@ -45,7 +45,7 @@ add(200, 50)
 # 执行结束。
 ```
 
-2. 函数计时
+### 2. 函数计时
 
 ```python
 import time
@@ -69,8 +69,8 @@ sleep(10)
 #  花费时间：10.0127秒
 ```
 
-3. 带参数的函数装饰器
-   
+### 3. 带参数的函数装饰器
+
 ```python
 def say_hello(country):  # 嵌套了两层
     def decorator(func):
@@ -97,7 +97,7 @@ xiaoming()  # 输出：你好！
 jack()  # 输出：hello.
 ```
 
-4. 不带参数的类装饰器
+### 4. 不带参数的类装饰器
 
 ```python
 class Logger:
@@ -120,8 +120,8 @@ say("hello")
 #  say hello!
 ```
 
-5. 多个装饰器对同一个函数进行装饰
-   
+### 5. 多个装饰器对同一个函数进行装饰
+
 ```python
 def set_function1(fun):
     print('---开始进行装饰1---')
@@ -173,5 +173,6 @@ print(ret)
 最终返回值 400。
 
 
-参考：
+### 参考：
+
 - https://zhuanlan.zhihu.com/p/76056230
