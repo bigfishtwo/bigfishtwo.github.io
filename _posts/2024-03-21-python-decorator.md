@@ -18,10 +18,10 @@ math: true
 被装饰函数的参数取决于装饰器函数的参数。
 装饰器函数应该接收一个函数作为参数，并返回一个新的函数，新函数会替换原来的函数，从而实现对原有代码功能的动态修改。
 
-一些装饰器的展示
+一些装饰器用法的展示：
 
 1. 日志打印
-```
+```python
 # ============= 闭包环境 ============ #
 def logger(func):
     def wrapper(*args, **kwargs):
@@ -38,13 +38,14 @@ def add(x, y):
 
 add(200, 50)  
 
->>准备开始执行：add 函数:
->> 200 + 50 = 250
->> 执行结束。
+# 输出：
+# 准备开始执行：add 函数:
+# 200 + 50 = 250
+# 执行结束。
 ```
 
 2. 函数计时
-```
+```python
 import time
 def timer(func):
     def wrapper(*args, **kwargs):
@@ -62,11 +63,12 @@ def sleep(seconds):
 
 sleep(10)  
 
->> 花费时间：10.0127秒
+# 输出：
+#  花费时间：10.0127秒
 ```
 
 3. 带参数的函数装饰器
-```
+```python
 def say_hello(country):  # 嵌套了两层
     def decorator(func):
         def wrapper(*args, **kwargs):
@@ -95,7 +97,7 @@ jack()  # 输出：hello.
 
 4. 不带参数的类装饰器
 
-```
+```python
 class Logger:
     def __init__(self, func):
         self.func = func
@@ -110,13 +112,15 @@ def say(something):
 
 say("hello")  
 
->> [INFO]: 函数 say() 正在运行... 
->> say hello!
+
+# 输出：
+# [INFO]: 函数 say() 正在运行... 
+#  say hello!
 
 ```
 
 5. 多个装饰器对同一个函数进行装饰
-```
+```python
 def set_function1(fun):
     print('---开始进行装饰1---')
     def call_function1(*args, **kwargs):
@@ -165,3 +169,7 @@ print(ret)
 计算过程是 `call_function1` 接受到被 2 装饰的 `test1`，于是执行  `call_function2`，因此两个函数打印出来的参数相同。最后是调用被装饰的`test1`，打印输入值 100，返回输出值 100。装饰 2 执行了 +200 的操作，返回 300。接着装饰 1 执行 +100 的操作，返回 400。
 
 最终返回值 400。
+
+
+参考：
+- https://zhuanlan.zhihu.com/p/76056230
