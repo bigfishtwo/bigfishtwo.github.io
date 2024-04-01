@@ -57,6 +57,8 @@ $Attention=softmax({QK^T}/{\sqrt{d_k}})V$
 **为什么要除以 $\sqrt{d_k}$ ？**
 : 假设 Q 和 K 的均值为 0，方差为 1。它们的矩阵乘积将有均值为 0，方差为 $d_k$ ，因此使用  $d_k$ 的平方根被用于缩放，使得 Q 和 K 的矩阵乘积的均值为 0，方差为1。
 
+根据高斯分布，我们可以认为 $QK$ 的值范围在 $-3\sqrt{d_k}$ 到 $3\sqrt{d_k}$。对于较大的模型，$d_k$ 通常是一个较大的正值，Softmax之后的注意力分布变得高度集中。这会导致严重的梯度消失，从而影响训练的有效性，并可能导致性能下降。因此将缩放因子可以简单地定义为 $λ_d = \frac{1}{d_k}$，以保持相似的大小。
+
 **Multi-Head Attention 如何计算**
 : Multi-Head Attention 包含多个 Self-Attention 层，首先将输入$X$分别传递到$k$ 个不同的 Self-Attention 中，计算得到 $k$ 个输出，所有 $k$ 个头的结果会被 concatenate 合在一起，传入一个Linear层，得到最终的输出。
 
@@ -106,6 +108,7 @@ UNet
 $$HD=maxx_{k95\%}(h(A,B),h(B,A))\\
 h(A,B)=max(a \in A)min(b \in B)||a-b||\\
 h(B,A)=max(b \in B)min(a \in A)||a-b||$$
+- Normalized Surface Distance (NSD)：是一种不确定性感知分割指标，用于测量两个边界之间的重叠。
 
 **分割任务常用loss**
 - 交叉熵损失 Cross Entropy Loss Function：
