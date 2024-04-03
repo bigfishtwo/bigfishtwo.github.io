@@ -64,7 +64,17 @@ $Attention=softmax({QK^T}/{\sqrt{d_k}})V$
 
 卷积的 Attention 方法有什么？
 
+**ViT 中分 patch 的方法有什么缺点**
+: patch size 是在速度和精度之间的权衡，小的 patch size 意味着更多的 patch 数量，以及更高的精度和开销，而模型只在训练的 patch size上表现的好。
+
+**ViT 和 CNN的区别是什么？**
+- 较真派回答：从数学概念上讲，attention 和 CNN 几乎完全等价
+- 实用派回答：由于没有 inductive bias， ViT 需要比 CNN 更多的数据进行训练；CNN 通过增加深度扩大感受野，获得更大的局部表示，而 ViT 一开始就拥有全局的视野。
+
 ## 分类相关
+
+**介绍 CrossEntropy**
+:  交叉熵损失衡量类别的真实概率分布和预测概率分布之间的差异。
 
 **分类任务的常见指标**
 - Accuracy：
@@ -104,11 +114,16 @@ UNet
 - Dice系数：计算两个样本之间的相似度，用A、B表示两个轮廓区域所包含的点集，公式为： $Dice(A,B)=2 \frac{|A⋂B|}{|A|+|B|}$。
 其次Dice也可以表示为： $Dice(A, B) = \frac{2TP}{2TP+FN+FP}$， 其中TP，FP，FN分别是真阳性、假阳性、假阴性的个数。
 - IoU：交并集，$Dice(A,B)= \frac{|A⋂B|}{|A∪ B|} = \frac{TP}{TP+FP+FN}$。
+
 - HD95:HD95 指的是 95% 的豪斯多夫距离，它量化了两个集合在第 95 百分位数时的最大距离。数值越小，表示两个集合之间的相似度越高。 h(A, B) 表示针对 A 中的每个像素计算出的到 B 中每个像素的最短距离的最大值。
 $$HD=maxx_{k95\%}(h(A,B),h(B,A))\\
 h(A,B)=max(a \in A)min(b \in B)||a-b||\\
 h(B,A)=max(b \in B)min(a \in A)||a-b||$$
 - Normalized Surface Distance (NSD)：是一种不确定性感知分割指标，用于测量两个边界之间的重叠。
+
+**Dice 和 IoU 的关系**
+:根据 Dice 和 IoU 的公式，经过变形可以得到， $IoU = \frac{dice}{2-dice},  Dice=\frac{2IoU}{1+IoU}$
+
 
 **分割任务常用loss**
 - 交叉熵损失 Cross Entropy Loss Function：
