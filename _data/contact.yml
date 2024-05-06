@@ -10,9 +10,10 @@
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
 
-- type: rss
-  icon: "fas fa-rss"
-  noblank: true
+- type: qq
+  icon: "fab fa-qq"
+  url: "936047539"
+  # noblank: true
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon
