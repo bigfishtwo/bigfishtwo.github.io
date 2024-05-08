@@ -65,16 +65,13 @@ $Attention=softmax({QK^T}/{\sqrt{d_k}})V$
 卷积的 Attention 方法有什么？
 
 **ViT 中分 patch 的方法有什么缺点**
-: patch size 是在速度和精度之间的权衡，小的 patch size 意味着更多的 patch 数量，以及更高的精度和开销，而模型只在训练的 patch size上表现的好。
+: patch size 是在速度和精度之间的权衡，小的 patch size 意味着更多的 patch 数量，以及更高的精度和开销，而模型只在训练的 patch size上表现的好。 Patch size和数量在训练中是固定的，对应固定的 token 数量，在推理时如果不使用同样的 patchify 方法，可能会对精度有影响。 
 
 **ViT 和 CNN的区别是什么？**
 - 较真派回答：从数学概念上讲，attention 和 CNN 几乎完全等价
 - 实用派回答：由于没有 inductive bias， ViT 需要比 CNN 更多的数据进行训练；CNN 通过增加深度扩大感受野，获得更大的局部表示，而 ViT 一开始就拥有全局的视野。
 
 ## 分类相关
-
-**介绍 CrossEntropy**
-:  交叉熵损失衡量类别的真实概率分布和预测概率分布之间的差异。
 
 **分类任务的常见指标**
 - Accuracy：
@@ -99,10 +96,14 @@ $\text { sensitivity }=\frac{T P}{T P+F N}=\text { recall }$
 Auc指的是计算roc的面积。 AUC值是一个概率值，当你随机挑选一个正样本以及负样本，当前的分类算法根据计算得到的Score值将这个正样本排在负样本前面的概率就是AUC值，AUC值越大，当前分类算法越有可能将正样本排在负样本前面，从而能够更好地分类。
 $$A U C=\frac{\sum_{i \in \text { positiveClass }} \operatorname{rank}_{i}-\frac{M(1+M)}{2}}{M \times N}$$
 
+**分类任务常见 loss**
+- Cross Entropy：交叉熵损失衡量类别的真实概率分布和预测概率分布之间的差异。
+
+
 ## 分割相关
 
 **分割常用的方法有哪些**
-UNet
+: UNet（医学图像），DINOv2（预训练大模型），SAM（弱监督，大模型）
 
 **介绍 UNet**
 
@@ -157,3 +158,13 @@ $$ dice \ loss = 1- Dice$$
 - 分patch 推理
 - 最大联通域
    
+## 目标检测
+
+**常用方法**
+: YOLO系列，DINOv2
+
+
+## 实用问题
+
+**显卡利用率低怎么办？**
+: 分配更多CPU资源加载数据；直接在加速卡上而不是 CPU 上解码和变换图像，避免GPU 等待预处理
