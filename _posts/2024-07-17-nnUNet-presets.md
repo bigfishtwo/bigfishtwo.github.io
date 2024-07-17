@@ -1,21 +1,20 @@
 ---
-title: nnUNet Revisited-呼吁对 3D 医学图像分割进行严格验证
+title: 论文笔记-nnUNet Revisited-呼吁对 3D 医学图像分割进行严格验证
 date: 2024-07-17 +0800
 categories: [论文笔记]
 tags: [医学图像,分割]
 ---
 
 nnUNet revisited 论文:
-
 [nnU-Net Revisited: A Call for Rigorous Validation in 3D Medical Image Segmentation](https://arxiv.org/pdf/2404.09556)
 
-nnUNet 论文：
-
-[nnU-Net: Self-adapting Framework for U-Net-Based Medical Image Segmentation](https://arxiv.org/pdf/1809.10486.pdf)
+nnUNet 论文：[nnU-Net: Self-adapting Framework for U-Net-Based Medical Image Segmentation](https://arxiv.org/pdf/1809.10486.pdf)
 
 nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation
 
 更新文档：[https://github.com/MIC-DKFZ/nnUNet](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/resenc_presets.md)
+
+nnUNet 笔记：https://bigfishtwo.github.io/posts/nnUNet/
 
 ## 太长不看版
 
