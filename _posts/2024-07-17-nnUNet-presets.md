@@ -27,10 +27,15 @@ nnUNet 笔记：https://bigfishtwo.github.io/posts/nnUNet/
 nnUNetv2_plan_and_preprocess -d DATASET -pl nnUNetPlannerResEncL
 ```
 
-运行：
+生成 plan：
 
 ```
 nnUNetv2_plan_experiment -d DATASET -pl nnUNetPlannerResEncL
+```
+
+训练：
+```
+nnUNetv2_train -d DATASET -p nnUNetResEncUNetLPlans
 ```
 
 ## 1. 前情提要
