@@ -148,7 +148,7 @@ Noise2Contrast，是一种自监督技术，利用各种测量的 MR 图像对�
 
 DDM2（Denoising Diffusion Models for Denoising Diffusion MRI），利用扩散去噪生成模型进行MRI去噪的自监督去噪方法。提出的三阶段框架将基于统计的去噪理论整合到扩散模型中，并通过条件生成进行去噪。
 
-### 参考论文：
+### 参考论文
 
 [1] Noise estimation in parallel MRI: GRAPPA and SENSE
 
