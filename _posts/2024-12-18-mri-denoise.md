@@ -6,7 +6,7 @@ tags: [MRI, 医学图像]
 math: true
 ---
 
-## 磁共振中的噪声
+## 1. 磁共振中的噪声
 
 磁共振成像中的主要噪声源是热噪声，它来自被扫描对象以及接收器中的电子元件。
 
@@ -31,7 +31,7 @@ math: true
 因此，空间分辨的噪声图是初始标准偏差、g 因子和偏置场的乘法组合。需要注意的是，噪声去相关步骤被纳入处理流程，并在重建之前执行，这样噪声相关矩阵 Σ 变成对角矩阵。[2]
 
 
-## 磁共振图像去噪
+## 2. 磁共振图像去噪
 
 降噪技术有两个主要方向：
 
@@ -42,7 +42,7 @@ math: true
 
 在重建过程中使用特定算法对获取的图像进行去噪，例如通过感知压缩、在重建后对图像进行滤波、或两者相结合，都是低成本、高效率的替代方法。
 
-### 传统算法
+### 2.1 传统算法
 
 传统的磁共振成像去噪技术一般基于滤波、变换或统计方法，如 Mohan 等人（2014 年）的研究。目前使用最广泛的三种方法是 Tomasi 和 Manduchi（1998 年）的双边滤波、Buades 等人（2005 年）的 non-local means 和 Dabov 等人（2007 年）的 BM3D。
 
@@ -90,7 +90,7 @@ def BM3D(image):
     return denoised_image
 ```
 
-### Supervised learning
+### 2.2 Supervised learning
 
 有监督的深度学习方法需要成对的有噪声和无噪声图像进行训练。
 
@@ -113,10 +113,10 @@ SwinIR 使用 Swin Transformer 进行图像去噪任务。它将 Transformer 与
 
 Jiang 等人（2018 年）提出了使用多通道 DnCNN 对磁共振成像中的 Rician 噪声而不是高斯噪声进行去噪。[6]
 
-Duo等人提出了一种用于MRI去噪的复值卷积神经网络（非盲DnCNN），旨在解决传统去噪方法忽视相位信息的问题。该网络通过引入噪声水平图，能够有效处理模拟和真实低场MRI数据中的噪声。网络的输入是一个 2D 复值 MRI 图像，与可调节的复值噪声级别图拼接在一起。非盲ℂDnCNN 由一系列复数卷积块组成。每个块中采用了三种操作：复数卷积（ℂConv）、径向批量标准化（BN）和复数修正线性单元（ℂReLU）。噪声等级由分别估计实部和虚部的 sigma 平均得到。[7]
+Duo 等人提出了一种用于MRI去噪的复值卷积神经网络（非盲DnCNN），旨在解决传统去噪方法忽视相位信息的问题。该网络通过引入噪声水平图，能够有效处理模拟和真实低场MRI数据中的噪声。网络的输入是一个 2D 复值 MRI 图像，与可调节的复值噪声级别图拼接在一起。非盲ℂDnCNN 由一系列复数卷积块组成。每个块中采用了三种操作：复数卷积（ℂConv）、径向批量标准化（BN）和复数修正线性单元（ℂReLU）。噪声等级由分别估计实部和虚部的 sigma 平均得到。[7]
 
 
-### Unspervised learning
+### 2.3 Unspervised learning
 
 然而，在核磁共振成像中，获取严格无噪声的图像并不可行。在这种情况下，可以采用无监督学习方法，从而避免在模型训练过程中需要成对的干净图像。
 
@@ -145,8 +145,9 @@ Noise2score 通过确定后验分布的模式来解决图像去噪问题，通�
 
 Noise2Contrast，是一种自监督技术，利用各种测量的 MR 图像对比度信息来训练去噪模型。其他方法则考虑整合额外的先验信息，以获得更接近监督训练的结果。
 
-
 DDM2（Denoising Diffusion Models for Denoising Diffusion MRI），利用扩散去噪生成模型进行MRI去噪的自监督去噪方法。提出的三阶段框架将基于统计的去噪理论整合到扩散模型中，并通过条件生成进行去噪。
+
+Chung 等人（2022）提出了一种基于分数反向扩散采样的去噪方法，仅使用膝关节冠状扫描进行训练，即使在受到复杂混合噪声污染的分布外体内肝脏 MRI 数据上也表现出色。此外，还提出了一种用同一网络提高去噪图像分辨率的方法。[8]
 
 ### 参考论文
 
@@ -163,3 +164,5 @@ DDM2（Denoising Diffusion Models for Denoising Diffusion MRI），利用扩散�
 [6] Jiang, D., Dou, W., Vosters, L., Xu, X., Sun, Y., and Tan, T. (2018). Denoising of 3D Magnetic Resonance Images with Multi-Channel Residual Learning of Convolutional Neural Network. Jpn. J. Radiol. 36, 566–574. doi:10.1007/s11604-018-0758-8Accessed November 28, 2020
 
 [7] Dou, Q., Wang, Z., Feng, X., Campbell‐Washburn, A. E., Mugler III, J. P., & Meyer, C. H. (2025). MRI denoising with a non‐blind deep complex‐valued convolutional neural network. NMR in Biomedicine, 38(1), e5291
+
+[8] MR Image Denoising and Super-Resolution Using Regularized Reverse Diffusion.
