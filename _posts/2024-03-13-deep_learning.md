@@ -2,7 +2,7 @@
 title: Deep learning questions
 date: 2024-03-13 +0800
 categories: [深度学习]
-tags: []
+tags: [深度学习]
 math: true
 ---
 
