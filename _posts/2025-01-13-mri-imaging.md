@@ -63,7 +63,11 @@ $$M \backsim \frac{\gamma \={h} B_0}{2k_B T} $$
 
 原子核自身旋转的同时围绕着 $B_0$ 为轴旋转, 氢质子以拉莫尔频率 $\omega _0 = \gamma B_0$ 进动。
 
+![20250417215725](https://cdn.jsdelivr.net/gh/bigfishtwo/BlogPics@main/imgs/20250417215725.png)
+
 考虑在以拉莫尔频率旋转的第二个坐标系，在此坐标系中，没有进动（因为在跟着一起转），所以需要另一个磁场 $B_1$ 来使旋转轴失去平衡（excitation），才能测量到特定质子的信号，即射频磁场。
+
+![20250417215758](https://cdn.jsdelivr.net/gh/bigfishtwo/BlogPics@main/imgs/20250417215758.png)
 
 施加射频脉冲，纵向磁化矢量减小，横向磁化矢量增大，通过测量横向磁化矢量可以获得生物组织的磁共振信号（从何而来）， 但是现在还不能信号来源的确定位置。
 
@@ -159,3 +163,10 @@ FID 的基本频率为正弦波，在拉莫尔频率上振荡，并受到时间�
 180° 脉冲使整个系统颠倒过来。翻转后，更快的进动旋转现在发现自己处于群体的后面。随着不断的进动，它们最终赶上了之前更慢的旋转。这发生在时间 TE = 2 x t 处，这是自旋回波的中心。在回波中心之外，较快的旋转再次将较慢的旋转抛在后面，系统再次失相。
 
 ![20250416223547](https://cdn.jsdelivr.net/gh/bigfishtwo/BlogPics@main/imgs/20250416223547.png)
+
+
+## 参考：
+1. https://mriquestions.com
+2. MRI: The Basics
+3. 磁共振成像原理
+4. Gengsheng Lawrence Zeng. Medical Image Reconstruction – A Conceptual Tutorial. Springer-Verlag Berlin Heidelberg, 2010. DOI: 10.1007/978-3-642-05368-9
