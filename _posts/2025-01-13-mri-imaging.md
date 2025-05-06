@@ -165,7 +165,7 @@ FID 的基本频率为正弦波，在拉莫尔频率上振荡，并受到时间�
 ![20250416223547](https://cdn.jsdelivr.net/gh/bigfishtwo/BlogPics@main/imgs/20250416223547.png)
 
 
-## 参考：
+## 参考
 1. https://mriquestions.com
 2. MRI: The Basics
 3. 磁共振成像原理

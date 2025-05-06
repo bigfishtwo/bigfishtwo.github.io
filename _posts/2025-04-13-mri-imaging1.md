@@ -1,6 +1,6 @@
 ---
 title: MRI 成像（二）：K空间与快速成像
-date: 2025-01-13 +0800
+date: 2025-02-13 +0800
 categories: [医学相关, 医学图像]
 tags: [MRI, 医学图像, 深度学习]
 math: true
@@ -81,7 +81,8 @@ K空间中心部分具有更高对比度和信噪比，对于MRI重建非常重�
 
 传统的多回波序列以相同的相位编码收集一列回波，FSE/TSE 技术改变了每个回波的相位编码梯度。 由于在回波之间改变了相位编码梯度，因此可以在给定的重复时间（TR）内获取多行 k 空间（即相位编码步骤）。
 
-![20250424225253](https://cdn.jsdelivr.net/gh/bigfishtwo/BlogPics@main/imgs/20250424225253.png)
+
+![20250425001517](https://cdn.jsdelivr.net/gh/bigfishtwo/BlogPics@main/imgs/20250425001517.png)
 
 由于在每个 TR 间隔内采集多条相位编码线，FSE/TSE 技术可大大缩短成像时间。
 ![20250424225546](https://cdn.jsdelivr.net/gh/bigfishtwo/BlogPics@main/imgs/20250424225546.png)
@@ -191,7 +192,7 @@ CS 以低于采样定理的频率欠采样，通过非线性重建算法消除�
 - NMSE
 
 
-## 参考：
+## 参考
 1. https://mriquestions.com
 2. MRI: The Basics
 3. 磁共振成像原理
